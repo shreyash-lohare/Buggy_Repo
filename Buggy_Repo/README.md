@@ -38,7 +38,7 @@
 | 4   | index.html changed doctype to standard   |      Shaurya  |    Shaurya   |         
 | 5   | changed encoding to UTF-8                |       Shaurya |    Shaurya   |  
 | 6   | Added links to analytics.html and news.html to quiz.html                                         |       Naman        |      Naman        |
-| 7   |                                          |               |              |
+| 7   | added navigation (analytics.html)        |      Shaurya  |     Shaurya  |      
 | 8   |                                          |               |              |
 | 9   |                                          |               |              |
 | 10  |                                          |               |              |
