@@ -16,9 +16,9 @@ async def get_users():
     collection = await get_users_collection()
     users = []
     async for user in collection.find():
-        user["_id"] = str(user["_id"])
-        users.append(user)
-    return users # ✅ Ensures output matches User model
+        # Only include fields defined in User model
+        users.append({"username": user["username"], "bio": user["bio"]})
+    return users
 
 # Fix
 @router.post("/", status_code=201)
@@ -29,6 +29,7 @@ async def create_user(user: User):
     result = await collection.insert_one(user.dict())
     return {"id": str(result.inserted_id)}
 
+# Fix
 @router.delete("/{user_id}", status_code=204)
 async def delete_user(user_id: str):
     try:
