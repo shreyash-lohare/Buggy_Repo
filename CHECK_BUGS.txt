@@ -7,25 +7,6 @@
   - The users.py router is not imported or included in the application
   - FIX: Add 'from routes.users import router as users_router' and 'app.include_router(users_router)'
 
-### db.py
-- BUG #4: Missing quiz collection reference
-  - The init_db() function doesn't return a quiz collection
-  - The analytics route is trying to access collections that aren't included in the return dict
-
-### routes/items.py
-- BUG #5: Incorrect router initialization
-  - 'router = {}' should be 'router = APIRouter()'
-  - This prevents FastAPI from recognizing the routes
-
-- BUG #6: Duplicate route handler
-  - Two '@router.post(\
-/\)' functions with the same path
-  - Only the last one will be used, making the first one inaccessible
-  
-- BUG #7: Incorrect delete endpoint design
-  - The delete handler tries to delete two items but only one should be needed
-  - 'item_details' parameter is incorrectly used
-
 ### routes/analytics.py
 - BUG #8: Incorrect property access
   - Using 'names' and 'usernames' keys which don't match the model structure

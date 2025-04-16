@@ -54,7 +54,7 @@
 | 20  |  Changed POST TO DELETE (items.js)                                        |      Shaurya         |      Shaurya       |
 | 21  | Added Base URL to profile.js                                         |    Naman           | Naman             |
 | 22  |                                          |               |              |
-| 23  |                                          |               |              |
+| 23  | No check for duplicate item names in create_item (items.py) | Shuban | Shuban |
 | 24  |                                          |               |              |
 | 25  |                                          |               |              |
 | 26  |                                          |               |              |
