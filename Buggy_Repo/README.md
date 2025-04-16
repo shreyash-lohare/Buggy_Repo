@@ -43,9 +43,15 @@
 | 9   | Add link to to quiz.html in analytics.html,index.html,items.html     | Shaurya   |   Shaurya   |
 | 10  | Changed localhost:8001 to 8000  (analytics.js)                                       |     Shaurya          |   Shaurya           |
 | 11  | Incorrect script path in profile.html: "styles/profile.js" should be "scripts/profile.js"                                         | Shreyash              |  Shreyash            |
+<<<<<<< HEAD
 | 12  | Item class in models.py doesn't inherit from BaseModel                                         |               |              |
 | 13  | Missing users router import and include in main.py                                         |   Shreyash            |   Shreyash           |
 | 14  |                                          |               |              |
+=======
+| 12  | corrected order of displaying path to each link on the webpage for all pages                                         |  Naman             |      Naman        |
+| 13  |  Changed POST TO DELETE (items.js)                                        |      Shaurya         |      Shaurya       |
+| 14  | Added Base URL to profile.js                                         |    Naman           | Naman             |
+>>>>>>> b68ddbc00d3b2d17bcfb8e47eb53ca0e283fd5ee
 | 15  |                                          |               |              |
 | 16  |                                          |               |              |
 | 17  |                                          |               |              |
@@ -60,5 +66,5 @@
 | 26  |                                          |               |              |
 | 27  |                                          |               |              |
 | 28  |                                          |               |              |
-| 29  |                                          |               |              |
-| 30  |                                          |               |              |
+| 29  | Item class doesn't extend BaseModel (models.py) | Shuban | Shuban |
+| 30  | Wrong type annotation on Item.name (models.py)  | Shuban | Shuban |
