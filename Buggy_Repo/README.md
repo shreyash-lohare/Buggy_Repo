@@ -37,9 +37,9 @@
 | 3   | In profile.html the script path is incorrect. The javascript files are in scripts directory not styles directory                                         |   Naman            |     Naman         |
 | 4   | index.html changed doctype to standard   |      Shaurya  |    Shaurya   |         
 | 5   | changed encoding to UTF-8                |       Shaurya |    Shaurya   |  
-| 6   | Added links to analytics.html and news.html to quiz.html                                         |       Naman        |      Naman        |
+| 6   | Added links to analytics.html and news.html in quiz.html                                         |       Naman        |      Naman        |
 | 7   | added navigation (analytics.html)        |      Shaurya  |     Shaurya  |      
-| 8   |                                          |               |              |
+| 8   | Add link to to quiz.html in news.html                                     |  Naman             |     Naman         |
 | 9   |                                          |               |              |
 | 10  |                                          |               |              |
 | 11  |                                          |               |              |
