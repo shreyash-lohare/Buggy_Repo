@@ -65,6 +65,6 @@
 | 25  |                                          |               |              |
 | 26  |                                          |               |              |
 | 27  | quiz_collection not returned in init_db (db.py) | Shuban | Shuban |
-| 28  | Missing users router import and include in main.py                     (main.py)                    |   Shreyash            |  Shreyash            |
+| 28  | Missing users router import and include in main.py (main.py) |   Shreyash            |  Shreyash            |
 | 29  | Item class doesn't extend BaseModel (models.py) | Shuban | Shuban |
 | 30  | Wrong type annotation on Item.name (models.py)  | Shuban | Shuban |
