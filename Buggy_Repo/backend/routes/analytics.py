@@ -22,17 +22,18 @@ async def get_analytics():
     
     items = []
     users = []
-    
     async for item in items_collection.find():
+        item["_id"] = str(item["_id"])
         items.append(item)
     async for user in users_collection.find():
+        user["_id"] = str(user["_id"])
         users.append(user)
     
     item_count = len(items)
     user_count = len(users)
     
-    item_name_lengths = np.array([len(item["name"]) for item in items]) if items else np.array([])
-    user_username_lengths = np.array([len(user["username"]) for user in users]) if users else np.array([])
+    item_name_lengths = np.array([len(item.get("name", "")) for item in items]) if items else np.array([])
+    user_username_lengths = np.array([len(user.get("username", "")) for user in users]) if users else np.array([])
     
     stats = {
         "item_count": item_count,
