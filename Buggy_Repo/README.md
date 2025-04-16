@@ -43,20 +43,19 @@
 | 9   | Add link to to quiz.html in analytics.html,index.html,items.html     | Shaurya   |   Shaurya   |
 | 10  | Changed localhost:8001 to 8000  (analytics.js)                                       |     Shaurya          |   Shaurya           |
 | 11  | Incorrect script path in profile.html: "styles/profile.js" should be "scripts/profile.js"                                         | Shreyash              |  Shreyash            |
+<<<<<<< HEAD
 
 | 12  | Item class in models.py doesn't inherit from BaseModel                                         |               |              |
 | 13  | Missing users router import and include in main.py                                         |   Shreyash            |   Shreyash           |
 | 14  |                                          |               |              |
 
+=======
+>>>>>>> 0cf38ce5b6a52786be97a733122c4e156696b2bb
 | 12  | corrected order of displaying path to each link on the webpage for all pages                                         |  Naman             |      Naman        |
 | 13  |  Changed POST TO DELETE (items.js)                                        |      Shaurya         |      Shaurya       |
 | 14  | Added Base URL to profile.js                                         |    Naman           | Naman             |
-
-| 15  |                                          |               |              |
-
 | 15  | profile.js was trying to access userCount but profile.html has userCounts                                          |             Naman  |     Naman         |
-
-| 16  |                                          |               |              |
+| 16  |   In profile.js Delete Button was using Patch method instead of Delete method, fixed it                                       |        Naman       |       Naman       |
 | 17  |                                          |               |              |
 | 18  |                                          |               |              |
 | 19  |                                          |               |              |
