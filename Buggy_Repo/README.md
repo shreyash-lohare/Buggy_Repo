@@ -43,7 +43,7 @@
 | 9   | Add link to to quiz.html in analytics.html,index.html,items.html     | Shaurya   |   Shaurya   |
 | 10  | Changed localhost:8001 to 8000  (analytics.js)                                       |     Shaurya          |   Shaurya           |
 | 11  | Incorrect script path in profile.html: "styles/profile.js" should be "scripts/profile.js"                                         | Shreyash              |  Shreyash            |
-| 12  |                                          |               |              |
+| 12  | corrected order of displaying path to each link on the webpage for all pages                                         |  Naman             |      Naman        |
 | 13  |                                          |               |              |
 | 14  |                                          |               |              |
 | 15  |                                          |               |              |
