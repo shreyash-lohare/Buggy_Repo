@@ -2,20 +2,6 @@
 
 ## Backend Issues
 
-### main.py
-- BUG #1: Missing users router import
-  - The users.py router is not imported or included in the application
-  - FIX: Add 'from routes.users import router as users_router' and 'app.include_router(users_router)'
-
-### routes/analytics.py
-- BUG #8: Incorrect property access
-  - Using 'names' and 'usernames' keys which don't match the model structure
-  - Should match the property names from models.py
-  
-- BUG #9: Hard-coded users array
-  - 'users = [\A1\,\B2\,\C3\]' shouldn't be there if fetching from DB
-  - It overrides the database results
-
 ### routes/users.py
 - BUG #10: Wrong HTTP method
   - '@router.post(\/\)' is used for the get_users function
@@ -24,32 +10,6 @@
 - BUG #11: Incorrect delete function
   - 'collection.delete_all()' method doesn't exist in MongoDB
   - Should be 'collection.delete_one({\_id\: ObjectId(user_id)})'
-
-## Frontend Issues
-
-### index.html
-- BUG #12: Potential issues with document setup
-  - Check doctype, character encoding, etc.
-  
-- BUG #13: Missing script include
-  - May be missing reference to home.js despite having a scripts folder
-
-### style.css
-- BUG #14: Empty CSS file
-  - The file contains only comments: \Aah
-I
-was
-too
-lazy
-to
-implement
-this\
-  - Missing actual CSS styling
-
-### Navigation and Routing
-- BUG #15: Links may be incorrectly set up
-  - Check that navigation links point to the correct HTML files
-  - Quiz page shown in navigation of index.html should link to quiz.html
 
 ## General Issues
 - BUG #16: Missing error handling in API calls

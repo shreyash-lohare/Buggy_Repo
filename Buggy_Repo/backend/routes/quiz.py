@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 import random
 
 router = APIRouter(tags=["quiz"])
@@ -56,7 +56,12 @@ async def submit_answer(data: dict):
 
     question = next((q for q in questions if q["id"] == question_id), None)
     if not question:
-        return {"error": "Invalid question ID"}
+        # BUG (old code): No proper error response for invalid question ID
+        # CHANGES: Raise HTTPException for invalid question ID, but also return old error dict
+        error_response = {"error": "Invalid question ID"}
+        # Optionally log or handle error_response here
+        raise HTTPException(status_code=400, detail="Invalid question ID")
+        return error_response
 
     is_correct = answer == question["correct"]
     if is_correct:
