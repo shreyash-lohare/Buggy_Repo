@@ -51,8 +51,12 @@
 | 12  | corrected order of displaying path to each link on the webpage for all pages                                         |  Naman             |      Naman        |
 | 13  |  Changed POST TO DELETE (items.js)                                        |      Shaurya         |      Shaurya       |
 | 14  | Added Base URL to profile.js                                         |    Naman           | Naman             |
+<<<<<<< HEAD
 >>>>>>> b68ddbc00d3b2d17bcfb8e47eb53ca0e283fd5ee
 | 15  |                                          |               |              |
+=======
+| 15  | profile.js was trying to access userCount but profile.html has userCounts                                          |             Naman  |     Naman         |
+>>>>>>> 94326018f5aebaed188e609dabba418c90fa5c9f
 | 16  |                                          |               |              |
 | 17  |                                          |               |              |
 | 18  |                                          |               |              |
