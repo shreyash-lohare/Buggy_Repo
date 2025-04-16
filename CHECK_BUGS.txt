@@ -7,14 +7,6 @@
   - The users.py router is not imported or included in the application
   - FIX: Add 'from routes.users import router as users_router' and 'app.include_router(users_router)'
 
-### models.py
-- BUG #2: Item class doesn't extend BaseModel
-  - Should be 'class Item(BaseModel):' to inherit from Pydantic BaseModel
-  - Without this, validation won't work properly
-  
-- BUG #3: Wrong type annotation on Item.name
-  - 'name: int' should be 'name: str' since names are typically strings
-
 ### db.py
 - BUG #4: Missing quiz collection reference
   - The init_db() function doesn't return a quiz collection
