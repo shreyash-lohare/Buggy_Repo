@@ -43,7 +43,7 @@
 | 9   | Add link to to quiz.html in analytics.html,index.html,items.html     | Shaurya   |   Shaurya   |
 | 10  | Changed localhost:8001 to 8000  (analytics.js)                                       |     Shaurya          |   Shaurya           |
 | 11  | Incorrect script path in profile.html: "styles/profile.js" should be "scripts/profile.js"                                         | Shreyash              |  Shreyash            |
-<<<<<<< HEAD
+
 | 12  | Item class in models.py doesn't inherit from BaseModel                                         |               |              |
 | 13  | Missing users router import and include in main.py                                         |   Shreyash            |   Shreyash           |
 | 14  |                                          |               |              |
@@ -68,6 +68,6 @@
 | 25  |                                          |               |              |
 | 26  |                                          |               |              |
 | 27  |                                          |               |              |
-| 28  |                                          |               |              |
+| 28  | Missing users router import and include in main.py                     (main.py)                    |   Shreyash            |  Shreyash            |
 | 29  | Item class doesn't extend BaseModel (models.py) | Shuban | Shuban |
 | 30  | Wrong type annotation on Item.name (models.py)  | Shuban | Shuban |
