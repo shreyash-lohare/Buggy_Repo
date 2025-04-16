@@ -1,5 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from models import User
+from typing import List
 from bson import ObjectId
 from bson.errors import InvalidId
 
@@ -9,14 +10,15 @@ async def get_users_collection():
     from db import init_db
     return init_db()["users_collection"]
 
-@router.get("/")
+# Fix
+@router.get("/", response_model=List[User])
 async def get_users():
     collection = await get_users_collection()
     users = []
     async for user in collection.find():
         user["_id"] = str(user["_id"])
         users.append(user)
-    return users
+    return users # ✅ Ensures output matches User model
 
 # Fix
 @router.post("/", status_code=201)
