@@ -42,7 +42,7 @@
 | 8   | Add link to to quiz.html in news.html and profile.html                                    |  Naman             |     Naman         |
 | 9   | Add link to to quiz.html in analytics.html,index.html,items.html     | Shaurya   |   Shaurya   |
 | 10  | Changed localhost:8001 to 8000  (analytics.js)                                       |     Shaurya          |   Shaurya           |
-| 11  |                                          |              |             |
+| 11  |   Improper HTML structure and missing container in items.html                                       |   Shreyash           |    Shreyash         |
 | 12  | Item class in models.py doesn't inherit from BaseModel                                         | Shreyash              |    Shreyash          |
 | 13  | Missing users router import and include in main.py                                         |   Shreyash            |   Shreyash           |
 | 14  |                                          |               |              |
