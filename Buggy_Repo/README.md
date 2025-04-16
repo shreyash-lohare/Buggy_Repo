@@ -43,13 +43,9 @@
 | 9   | Add link to to quiz.html in analytics.html,index.html,items.html     | Shaurya   |   Shaurya   |
 | 10  | Changed localhost:8001 to 8000  (analytics.js)                                       |     Shaurya          |   Shaurya           |
 | 11  | Incorrect script path in profile.html: "styles/profile.js" should be "scripts/profile.js"                                         | Shreyash              |  Shreyash            |
-
-
-| 12  | Item class in models.py doesn't inherit from BaseModel                                         |               |              |
+| 12  | Item class in models.py doesn't inherit from BaseModel                                         | Shreyash              |    Shreyash          |
 | 13  | Missing users router import and include in main.py                                         |   Shreyash            |   Shreyash           |
 | 14  |                                          |               |              |
-
-
 | 15  | profile.js was trying to access userCount but profile.html has userCounts                                          |             Naman  |     Naman         |
 | 16  |   In profile.js Delete Button was using Patch method instead of Delete method, fixed it                                       |        Naman       |       Naman       |
 | 17  |   In analytics.py, there's no route prefix in main.py causing inconsistent API paths                                       |   Shreyash            |  Shreyash            |
