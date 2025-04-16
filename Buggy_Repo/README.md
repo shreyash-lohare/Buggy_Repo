@@ -44,7 +44,7 @@
 | 10  | Changed localhost:8001 to 8000  (analytics.js)                                       |     Shaurya          |   Shaurya           |
 | 11  | Incorrect script path in profile.html: "styles/profile.js" should be "scripts/profile.js"                                         | Shreyash              |  Shreyash            |
 | 12  | corrected order of displaying path to each link on the webpage for all pages                                         |  Naman             |      Naman        |
-| 13  |                                          |               |              |
+| 13  |  Changed POST TO DELETE (items.js)                                        |      Shaurya         |      Shaurya       |
 | 14  |                                          |               |              |
 | 15  |                                          |               |              |
 | 16  |                                          |               |              |
