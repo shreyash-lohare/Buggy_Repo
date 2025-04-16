@@ -17,9 +17,12 @@ async def get_users():
         users.append(user)
     return users
 
-@router.post("/")
+# Fix
+@router.post("/", status_code=201)
 async def create_user(user: User):
     collection = await get_users_collection()
+    if await collection.find_one({"username": user.username}):
+        raise HTTPException(400, "Username already exists")  #Check duplicates
     result = await collection.insert_one(user.dict())
     return {"id": str(result.inserted_id)}
 

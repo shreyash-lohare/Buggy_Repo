@@ -57,7 +57,7 @@
 | 23  | No check for duplicate item names in create_item (items.py) | Shuban | Shuban |
 | 24  | No error handling for missing 'name' or 'username' keys in analytics.py | Shuban | Shuban |
 | 25  | No proper error response for invalid question ID in quiz.py | Shuban | Shuban |
-| 26  |                                          |               |              |
+| 26  | Does not check for duplicate user in create_user (users.py)    | Arpit | Arpit |
 | 27  | quiz_collection not returned in init_db (db.py) | Shuban | Shuban |
 | 28  | | |          |
 | 29  |                                                     |        |      |
