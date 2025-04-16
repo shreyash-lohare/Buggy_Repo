@@ -60,5 +60,5 @@
 | 26  |                                          |               |              |
 | 27  |                                          |               |              |
 | 28  |                                          |               |              |
-| 29  |                                          |               |              |
-| 30  |                                          |               |              |
+| 29  | Item class doesn't extend BaseModel (models.py) | CHECK_BUGS.txt | Shuban |
+| 30  | Wrong type annotation on Item.name (models.py)  | CHECK_BUGS.txt | Shuban |
