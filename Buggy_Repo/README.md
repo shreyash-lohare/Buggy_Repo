@@ -45,7 +45,7 @@
 | 11  | Incorrect script path in profile.html: "styles/profile.js" should be "scripts/profile.js"                                         | Shreyash              |  Shreyash            |
 | 12  | corrected order of displaying path to each link on the webpage for all pages                                         |  Naman             |      Naman        |
 | 13  |  Changed POST TO DELETE (items.js)                                        |      Shaurya         |      Shaurya       |
-| 14  |                                          |               |              |
+| 14  | Added Base URL to profile.js                                         |    Naman           | Naman             |
 | 15  |                                          |               |              |
 | 16  |                                          |               |              |
 | 17  |                                          |               |              |
