@@ -33,10 +33,10 @@
 | ID  | Issue Description                        | Identified By | Fixed By     |
 |-----|------------------------------------------|---------------|--------------|
 | 1   | Style.css is not filled                  |        Narain |  Whole Team  |
-| 2   | items.html  (added container)                     Shaurya           
+| 2   | items.html  (added container)            |        Shaurya|   Shaurya    |    
 | 3   | In profile.html the script path is incorrect. The javascript files are in scripts directory not styles directory                                         |   Naman            |     Naman         |
-| 4   | index.html changed doctype to standard   |      Shaurya  |              |         
-| 5   | changed encoding to UTF-8                |       Shaurya |              |  
+| 4   | index.html changed doctype to standard   |      Shaurya  |    Shaurya   |         
+| 5   | changed encoding to UTF-8                |       Shaurya |    Shaurya   |  
 | 6   |                                          |               |              |
 | 7   |                                          |               |              |
 | 8   |                                          |               |              |
