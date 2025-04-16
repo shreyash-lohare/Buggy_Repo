@@ -1,12 +1,13 @@
+const baseURL = "http://localhost:8000";
 
 async function loadUsers() {
-  const res = await fetch(`/users`);
+  const res = await fetch(`${baseURL}/users`);
   const users = await res.json();
   const list = document.getElementById("userList");
   list.innerHTML = "";
   
-  document.getElementById("userCount").textContent = `Total users: ${users.length}`;
-  // why did I give such a weird task
+  document.getElementById("userCounts").textContent = `Total users: ${users.length}`;
+  
   users.forEach(user => {
     const li = document.createElement("li");
     li.textContent = `${user.username}: ${user.bio}`;
@@ -31,7 +32,7 @@ document.getElementById("search").addEventListener("input", async (e) => {
   list.innerHTML = "";
 
   const filteredUsers = users.filter(user => user.username.toLowerCase().includes(term));
-  document.getElementById("userCount").textContent = `Total users: ${filteredUsers.length}`;
+  document.getElementById("userCounts").textContent = `Total users: ${filteredUsers.length}`;
 
   filteredUsers.forEach(user => {
     const li = document.createElement("li");
@@ -40,7 +41,7 @@ document.getElementById("search").addEventListener("input", async (e) => {
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
     deleteBtn.onclick = async () => {
-      await fetch(`/users/${user._id}`, { method: "PATCH" });
+      await fetch(`${baseURL}/users/${user._id}`, { method: "DELETE" });
       loadUsers();
     };
 
@@ -49,13 +50,11 @@ document.getElementById("search").addEventListener("input", async (e) => {
   });
 });
 
-loadUsers();
-
 document.getElementById("userForm").addEventListener("submit", async (e) => {
   e.preventDefault();
   const username = document.getElementById("username").value;
   const bio = document.getElementById("bio").value;
-  await fetch(`/users`, {
+  await fetch(`${baseURL}/users`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username, bio })
@@ -63,3 +62,5 @@ document.getElementById("userForm").addEventListener("submit", async (e) => {
   e.target.reset();
   loadUsers();
 });
+
+loadUsers();
