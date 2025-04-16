@@ -40,7 +40,7 @@
 | 6   | Added links to analytics.html and news.html in quiz.html                                         |       Naman        |      Naman        |
 | 7   | added navigation (analytics.html)        |      Shaurya  |     Shaurya  |      
 | 8   | Add link to to quiz.html in news.html                                     |  Naman             |     Naman         |
-| 9   |                                          |               |              |
+| 9   | Add link to to quiz.html in analytics.html,index.html,items.html     | Shaurya   |   Shaurya   |
 | 10  |                                          |               |              |
 | 11  |                                          |               |              |
 | 12  |                                          |               |              |
