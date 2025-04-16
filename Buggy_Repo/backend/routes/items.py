@@ -4,9 +4,12 @@ from bson import ObjectId
 
 router = APIRouter()
 
+
 async def get_items_collection():
     from db import init_db
+
     return init_db()["items_collection"]
+
 
 @router.get("/")
 async def get_items():
@@ -17,11 +20,20 @@ async def get_items():
         items.append(item)
     return items
 
+
 @router.post("/")
 async def create_item(item: Item):
     collection = await get_items_collection()
+    # BUG (old code): No check for duplicate item names
+    # CHANGES: Added check to prevent duplicate item names
+    existing = await collection.find_one({"name": item.name})
+    if existing:
+        raise HTTPException(
+            status_code=400, detail="Item with this name already exists"
+        )
     result = await collection.insert_one(item.dict())
     return {"id": str(result.inserted_id)}
+
 
 @router.delete("/{item_id}")
 async def delete_item(item_id: str):
