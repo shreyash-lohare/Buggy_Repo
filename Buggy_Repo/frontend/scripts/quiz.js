@@ -1,137 +1,70 @@
-const BASE_URL = "http://localhost:8000";
-
-let score = 0;
-let highScore = 0;
+const baseURL = "http://localhost:8000";
+let currentScore = 0;
 let currentQuestion = null;
-let gameOver = false;
-let attemptHistory = [];
-
-const scoreDisplay = document.getElementById("scoreDisplay");
-const questionDiv = document.getElementById("question");
-const form = document.getElementById("answerForm");
-const feedback = document.getElementById("feedback");
-const resetBtn = document.getElementById("resetBtn");
-const attemptList = document.getElementById("attemptList");
-const attemptCount = document.getElementById("attemptCount");
-const searchInput = document.getElementById("search");
-
-function updateScoreDisplay() {
-  scoreDisplay.textContent = `Score: ${score} | High Score: ${highScore}`;
-}
-
-function updateAttempts() {
-  const search = searchInput.value.toLowerCase();
-  const filtered = attemptHistory.filter(a =>
-    a.question.toLowerCase().includes(search)
-  );
-
-  attemptList.innerHTML = filtered.map(a => `
-    <div>
-      <strong>${a.question}</strong><br/>
-      Your answer: ${a.answer} — ${a.result}
-    </div>
-  `).join("");
-
-  attemptCount.textContent = `Total attempts: ${filtered.length}`;
-}
-
-searchInput.addEventListener("input", updateAttempts);
-// how is life ?
-async function loadHighScore() {
-  try {
-    const res = await fetch(`${BASE_URL}/quiz/highscore`);
-    const data = await res.json();
-    highScore = data.high_score;
-    updateScoreDisplay();
-  } catch {
-    feedback.textContent = "Failed to load high score.";
-  }
-}
 
 async function loadQuestion() {
-  if (gameOver) return;
-
-  try {
-    const res = await fetch(`${BASE_URL}/quiz/question`);
-    const data = await res.json();
-    currentQuestion = data;
-
-    questionDiv.textContent = data.text;
-
-    form.innerHTML = data.options.map(option => `
-      <label>
-        <input type="radio" name="answer" value="${option}" required>
-        ${option}
-      </label><br/>
-    `).join("") + `<button type="submit">Submit</button>`;
-
-    form.dataset.id = data.id;
-    feedback.textContent = "";
-  } catch {
-    feedback.textContent = "Failed to load question.";
-  }
+    try {
+        const response = await fetch(`${baseURL}/quiz/question`);
+        if (!response.ok) throw new Error('Failed to load question');
+        currentQuestion = await response.json();
+        
+        document.getElementById('question').textContent = currentQuestion.text;
+        const optionsContainer = document.getElementById('options');
+        optionsContainer.innerHTML = '';
+        
+        currentQuestion.options.forEach(option => {
+            const button = document.createElement('button');
+            button.textContent = option;
+            button.onclick = () => submitAnswer(option);
+            optionsContainer.appendChild(button);
+        });
+    } catch (error) {
+        console.error('Error loading question:', error);
+        document.getElementById('error').textContent = 'Failed to load question. Please try again.';
+    }
 }
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  if (gameOver) return;
-
-  const selected = form.querySelector("input[name=answer]:checked");
-  if (!selected) return;
-
-  const answer = selected.value;
-  const id = parseInt(form.dataset.id);
-
-  try {
-    const res = await fetch(`${BASE_URL}/quiz/answer`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id, answer, score })
-    });
-
-    const data = await res.json();
-
-    if (data.error) {
-      feedback.textContent = data.error;
-      return;
+async function submitAnswer(answer) {
+    try {
+        const response = await fetch(`${baseURL}/quiz/answer`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                id: currentQuestion.id,
+                answer: answer,
+                score: currentScore
+            })
+        });
+        
+        if (!response.ok) throw new Error('Failed to submit answer');
+        const result = await response.json();
+        
+        const feedback = document.getElementById('feedback');
+        feedback.textContent = result.is_correct ? 'Correct!' : `Wrong! The correct answer was ${result.correct_answer}`;
+        feedback.className = result.is_correct ? 'correct' : 'wrong';
+        
+        currentScore = result.score;
+        document.getElementById('score').textContent = `Current Score: ${currentScore}`;
+        document.getElementById('highScore').textContent = `High Score: ${result.high_score}`;
+        
+        // Load next question after a short delay
+        setTimeout(loadQuestion, 1500);
+    } catch (error) {
+        console.error('Error submitting answer:', error);
+        document.getElementById('error').textContent = 'Failed to submit answer. Please try again.';
     }
+}
 
-    attemptHistory.push({
-      question: currentQuestion.text,
-      answer,
-      result: data.is_correct ? "✅ Correct" : `❌ Wrong (Correct: ${data.correct_answer})`
-    });
-
-    updateAttempts();
-
-    if (data.is_correct) {
-      score = data.score;
-      highScore = data.high_score;
-      updateScoreDisplay();
-      feedback.textContent = "✅ Correct!";
-      await loadQuestion();
-    } else {
-      feedback.textContent = `❌ Incorrect. Correct answer: ${data.correct_answer}. Game Over.`;
-      gameOver = true;
-      form.innerHTML = "";
-      resetBtn.classList.remove("hidden");
+// Initialize the quiz
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const response = await fetch(`${baseURL}/quiz/highscore`);
+        if (!response.ok) throw new Error('Failed to load high score');
+        const data = await response.json();
+        document.getElementById('highScore').textContent = `High Score: ${data.high_score}`;
+        loadQuestion();
+    } catch (error) {
+        console.error('Error initializing quiz:', error);
+        document.getElementById('error').textContent = 'Failed to initialize quiz. Please reload the page.';
     }
-  } catch {
-    feedback.textContent = "Error submitting answer.";
-  }
-});
-
-resetBtn.addEventListener("click", () => {
-  score = 0;
-  gameOver = false;
-  attemptHistory = [];
-  updateScoreDisplay();
-  updateAttempts();
-  resetBtn.classList.add("hidden");
-  loadQuestion();
-});
-
-window.addEventListener("DOMContentLoaded", async () => {
-  await loadHighScore();
-  loadQuestion();
 });
