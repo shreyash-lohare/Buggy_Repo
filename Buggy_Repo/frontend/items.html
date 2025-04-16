@@ -14,8 +14,28 @@
     <a href="news.html">News</a>
     <a href="quiz.html">Quiz</a>
   </nav>
+<!-- Built the structure for items.html -->
+  <main class="container">
+    <h1>📦 Items</h1>
+    <p id="itemCount">Total items: 0</p>
+    
+    <div class="search-section">
+      <input type="text" id="search" placeholder="Search items..." />
+    </div>
 
-  </div>
+    <div class="form-section">
+      <form id="itemForm">
+        <input type="text" id="itemName" placeholder="Item name" required />
+        <input type="text" id="itemDescription" placeholder="Description" required />
+        <button type="submit">Add Item</button>
+      </form>
+    </div>
+
+    <div class="items-section">
+      <ul id="itemList"></ul>
+    </div>
+  </main>
+
   <script src="scripts/items.js"></script>
 </body>
 </html>
