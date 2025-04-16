@@ -55,7 +55,7 @@
 | 15  | profile.js was trying to access userCount but profile.html has userCounts                                          |             Naman  |     Naman         |
 | 16  |   In profile.js Delete Button was using Patch method instead of Delete method, fixed it                                       |        Naman       |       Naman       |
 | 17  |   In analytics.py, there's no route prefix in main.py causing inconsistent API paths                                       |   Shreyash            |  Shreyash            |
-| 18  |                                          |               |              |
+| 18  |  API calls in profile.js missing baseURL                                        |    Shreyash           | Shreyash             |
 | 19  |                                          |               |              |
 | 20  |                                          |               |              |
 | 21  |                                          |               |              |
