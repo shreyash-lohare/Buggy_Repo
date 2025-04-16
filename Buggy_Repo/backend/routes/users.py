@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from models import User
 from bson import ObjectId
+from bson.errors import InvalidId
 
 router = APIRouter()
 
@@ -26,10 +27,12 @@ async def create_user(user: User):
     result = await collection.insert_one(user.dict())
     return {"id": str(result.inserted_id)}
 
-@router.delete("/{user_id}")
+@router.delete("/{user_id}", status_code=204)
 async def delete_user(user_id: str):
-    collection = await get_users_collection()
-    result = await collection.delete_one({"_id": ObjectId(user_id)})
-    if result.deleted_count:
-        return {"status": "deleted"}
-    raise HTTPException(status_code=404, detail="User not found")
+    try:
+        collection = await get_users_collection()
+        result = await collection.delete_one({"_id": ObjectId(user_id)})
+    except InvalidId:
+        raise HTTPException(400, "Invalid user ID format")  # Handle malformed IDs
+    if not result.deleted_count:
+        raise HTTPException(404, "User not found")

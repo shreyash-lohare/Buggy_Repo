@@ -59,6 +59,6 @@
 | 25  | No proper error response for invalid question ID in quiz.py | Shuban | Shuban |
 | 26  | Does not check for duplicate user in create_user (users.py)    | Arpit | Arpit |
 | 27  | quiz_collection not returned in init_db (db.py) | Shuban | Shuban |
-| 28  | | |          |
+| 28  | invalid object ID Handling |Arpit |      Arpit    |
 | 29  |                                                     |        |      |
 | 30  | Wrong type annotation on Item.name (models.py)  | Shuban | Shuban |
