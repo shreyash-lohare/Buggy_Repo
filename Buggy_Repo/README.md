@@ -26,7 +26,11 @@
 
 ### Add the names of the members and roll numbers of your team below
 
-- Name : Roll Number
+- Shreyash Lohare : 2024111026
+- Naman Singhal : 2024114013
+- Shaurya Kochar: 2024114001
+- Arpit Mahtele : 2024101112
+- Shuban Biswas : 2024111017
 
 ### Table to keep track
 
@@ -52,7 +56,7 @@
 | 18  |  API calls in profile.js missing baseURL                                        |    Shreyash           | Shreyash             |
 | 19  | corrected order of displaying path to each link on the webpage for all pages                                         |  Naman             |      Naman        |
 | 20  |  Changed POST TO DELETE (items.js)                                        |      Shaurya         |      Shaurya       |
-| 21  |                                         |              |           |
+| 21  |       Items form has mismatched IDs between HTML and JS                                  |   Shreyash           | Shreyash          |
 | 22  |                                          |               |              |
 | 23  | No check for duplicate item names in create_item (items.py) | Shuban | Shuban |
 | 24  | No error handling for missing 'name' or 'username' keys in analytics.py | Shuban | Shuban |
