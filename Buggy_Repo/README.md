@@ -47,7 +47,7 @@
 | 13  |  Changed POST TO DELETE (items.js)                                        |      Shaurya         |      Shaurya       |
 | 14  | Added Base URL to profile.js                                         |    Naman           | Naman             |
 | 15  | profile.js was trying to access userCount but profile.html has userCounts                                          |             Naman  |     Naman         |
-| 16  |                                          |               |              |
+| 16  |   In profile.js Delete Button was using Patch method instead of Delete method, fixed it                                       |        Naman       |       Naman       |
 | 17  |                                          |               |              |
 | 18  |                                          |               |              |
 | 19  |                                          |               |              |
