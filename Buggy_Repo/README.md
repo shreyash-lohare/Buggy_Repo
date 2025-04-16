@@ -60,5 +60,5 @@
 | 26  |                                          |               |              |
 | 27  | quiz_collection not returned in init_db (db.py) | Shuban | Shuban |
 | 28  | | |          |
-| 29  | Item class doesn't extend BaseModel (models.py) | Shuban | Shuban |
+| 29  |                                                     |        |      |
 | 30  | Wrong type annotation on Item.name (models.py)  | Shuban | Shuban |
