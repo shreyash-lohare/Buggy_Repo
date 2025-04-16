@@ -55,10 +55,10 @@
 | 21  | Added Base URL to profile.js                                         |    Naman           | Naman             |
 | 22  |                                          |               |              |
 | 23  | No check for duplicate item names in create_item (items.py) | Shuban | Shuban |
-| 24  |                                          |               |              |
+| 24  | No error handling for missing 'name' or 'username' keys in analytics.py | Shuban | Shuban |
 | 25  |                                          |               |              |
 | 26  |                                          |               |              |
 | 27  | quiz_collection not returned in init_db (db.py) | Shuban | Shuban |
 | 28  | | |          |
-| 29  | Item class doesn't extend BaseModel (models.py) | Shuban | Shuban |
+| 29  |                                                     |        |      |
 | 30  | Wrong type annotation on Item.name (models.py)  | Shuban | Shuban |
