@@ -42,7 +42,7 @@
 | 8   | Add link to to quiz.html in news.html and profile.html                                    |  Naman             |     Naman         |
 | 9   | Add link to to quiz.html in analytics.html,index.html,items.html     | Shaurya   |   Shaurya   |
 | 10  | Changed localhost:8001 to 8000  (analytics.js)                                       |     Shaurya          |   Shaurya           |
-| 11  |   Improper HTML structure and missing container in items.html                                       |   Shreyash           |    Shreyash         |
+| 11  |                                     |     |           |
 | 12  | Item class in models.py doesn't inherit from BaseModel                                         | Shreyash              |    Shreyash          |
 | 13  | Missing users router import and include in main.py                                         |   Shreyash            |   Shreyash           |
 | 14  |                                          |               |              |
@@ -52,7 +52,7 @@
 | 18  |  API calls in profile.js missing baseURL                                        |    Shreyash           | Shreyash             |
 | 19  | corrected order of displaying path to each link on the webpage for all pages                                         |  Naman             |      Naman        |
 | 20  |  Changed POST TO DELETE (items.js)                                        |      Shaurya         |      Shaurya       |
-| 21  | Added Base URL to profile.js                                         |    Naman           | Naman             |
+| 21  |                                         |              |           |
 | 22  |                                          |               |              |
 | 23  | No check for duplicate item names in create_item (items.py) | Shuban | Shuban |
 | 24  | No error handling for missing 'name' or 'username' keys in analytics.py | Shuban | Shuban |
